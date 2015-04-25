@@ -48,6 +48,7 @@
 		1B3F17DB1AE842FC00A70A56 /* FriendsRecipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsRecipes.swift; sourceTree = "<group>"; };
 		1B3F17DD1AE8430A00A70A56 /* My Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "My Recipes.swift"; sourceTree = "<group>"; };
 		1B3F17DF1AE8432E00A70A56 /* ShoppingCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		B7E362851AEC3EF00027BC70 /* RecipesImages */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RecipesImages; path = SwiftCooking/RecipesImages; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +72,7 @@
 		1B3F17A51AE8400E00A70A56 = {
 			isa = PBXGroup;
 			children = (
+				B7E362851AEC3EF00027BC70 /* RecipesImages */,
 				1B3F17B01AE8400E00A70A56 /* SwiftCooking */,
 				1B3F17C91AE8400E00A70A56 /* SwiftCookingTests */,
 				1B3F17AF1AE8400E00A70A56 /* Products */,
@@ -443,6 +445,7 @@
 				1B3F17D21AE8400E00A70A56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B3F17D31AE8400E00A70A56 /* Build configuration list for PBXNativeTarget "SwiftCookingTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +454,7 @@
 				1B3F17D51AE8400E00A70A56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

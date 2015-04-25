@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kff-QV-OxL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kff-QV-OxL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="UfL-Ee-oK0">
             <objects>
                 <navigationController id="Kff-QV-OxL" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e29-GB-ken">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yv-u2-ygd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-250.5" y="241.5"/>
+            <point key="canvasLocation" x="-582" y="251"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="4gw-QE-csP">
@@ -33,71 +33,84 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwO-4J-LM9">
-                                <rect key="frame" x="0.0" y="289" width="375" height="74"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Favourite Recipes">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7jC-0d-0FY">
+                                <rect key="frame" x="0.0" y="44" width="375" height="330"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backBlur.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8BS-Re-sbz">
+                                <rect key="frame" x="0.0" y="374" width="375" height="293"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rog-B4-RmT">
+                                <rect key="frame" x="0.0" y="364" width="375" height="57"/>
+                                <state key="normal" title="Button" backgroundImage="btn1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="l1X-ya-eMi" kind="show" id="wfN-Uh-rkd"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGD-Id-nzE">
-                                <rect key="frame" x="0.0" y="371" width="375" height="74"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="My Recipes">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G87-hO-eBl">
+                                <rect key="frame" x="0.0" y="426" width="375" height="56"/>
+                                <state key="normal" title="Button" backgroundImage="btn2.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Lfi-Fj-oVy" kind="show" id="fuY-cQ-h2Y"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXo-y4-whG">
-                                <rect key="frame" x="0.0" y="453" width="375" height="74"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Friends Recipes">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmt-3M-U2n">
+                                <rect key="frame" x="0.0" y="487" width="375" height="57"/>
+                                <state key="normal" title="Button" backgroundImage="btn3.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="i3B-vh-jd7" kind="show" id="3kh-ea-VaZ"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoR-tF-1Vt">
-                                <rect key="frame" x="0.0" y="535" width="375" height="74"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Shopping Cart">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgm-A2-9Jm">
+                                <rect key="frame" x="0.0" y="549" width="375" height="56"/>
+                                <state key="normal" title="Button" backgroundImage="btn4.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="M6a-f6-vl6" kind="show" id="IYN-5E-b4c"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUZ-Yy-I8E">
-                                <rect key="frame" x="0.0" y="207" width="375" height="74"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="All Recipes">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPs-kr-EBL">
+                                <rect key="frame" x="0.0" y="610" width="375" height="57"/>
+                                <state key="normal" title="Button" backgroundImage="btn5.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="feR-Tp-3qx" kind="show" id="kdJ-by-CKH"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.69696969696969702" green="0.69696969696969702" blue="0.69696969696969702" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kgm-A2-9Jm" firstAttribute="top" secondItem="gmt-3M-U2n" secondAttribute="bottom" constant="5" id="2Sj-1G-TWs"/>
+                            <constraint firstAttribute="trailing" secondItem="8BS-Re-sbz" secondAttribute="trailing" id="2pc-cq-kGH"/>
+                            <constraint firstItem="gmt-3M-U2n" firstAttribute="leading" secondItem="dc3-hW-ZDy" secondAttribute="leading" id="3Vt-8X-CGA"/>
+                            <constraint firstItem="Rog-B4-RmT" firstAttribute="height" secondItem="gmt-3M-U2n" secondAttribute="height" id="3pA-Zd-OaP"/>
+                            <constraint firstItem="G87-hO-eBl" firstAttribute="top" secondItem="Rog-B4-RmT" secondAttribute="bottom" constant="5" id="5eu-mJ-6TR"/>
+                            <constraint firstAttribute="centerX" secondItem="7jC-0d-0FY" secondAttribute="centerX" id="BK1-NT-3Jf"/>
+                            <constraint firstAttribute="trailing" secondItem="Rog-B4-RmT" secondAttribute="trailing" id="E3b-zq-5at"/>
+                            <constraint firstItem="TPs-kr-EBL" firstAttribute="top" secondItem="kgm-A2-9Jm" secondAttribute="bottom" constant="5" id="FDa-C9-yIR"/>
+                            <constraint firstItem="Rog-B4-RmT" firstAttribute="height" secondItem="G87-hO-eBl" secondAttribute="height" id="GTC-2V-8mJ"/>
+                            <constraint firstItem="Rog-B4-RmT" firstAttribute="top" secondItem="7jC-0d-0FY" secondAttribute="bottom" constant="-10" id="GoS-AP-7Gx"/>
+                            <constraint firstItem="Aq4-VK-1po" firstAttribute="top" secondItem="TPs-kr-EBL" secondAttribute="bottom" id="Nk7-5X-qKp"/>
+                            <constraint firstItem="TPs-kr-EBL" firstAttribute="height" secondItem="Rog-B4-RmT" secondAttribute="height" id="O0B-XU-Ozk"/>
+                            <constraint firstItem="8BS-Re-sbz" firstAttribute="top" secondItem="7jC-0d-0FY" secondAttribute="bottom" id="Rix-rZ-u41"/>
+                            <constraint firstItem="7jC-0d-0FY" firstAttribute="bottom" secondItem="Aq4-VK-1po" secondAttribute="top" multiplier="0.56" id="YmA-vk-EFp"/>
+                            <constraint firstAttribute="trailing" secondItem="7jC-0d-0FY" secondAttribute="trailing" id="Ysh-X3-fxi"/>
+                            <constraint firstItem="7jC-0d-0FY" firstAttribute="top" secondItem="bT0-D3-N10" secondAttribute="bottom" constant="-20" id="ZSW-s1-jI4"/>
+                            <constraint firstAttribute="trailing" secondItem="TPs-kr-EBL" secondAttribute="trailing" id="aHk-gr-hDq"/>
+                            <constraint firstAttribute="trailing" secondItem="kgm-A2-9Jm" secondAttribute="trailing" id="bXD-FM-5V4"/>
+                            <constraint firstItem="Aq4-VK-1po" firstAttribute="top" secondItem="8BS-Re-sbz" secondAttribute="bottom" id="dgy-gs-AXx"/>
+                            <constraint firstItem="8BS-Re-sbz" firstAttribute="leading" secondItem="dc3-hW-ZDy" secondAttribute="leading" id="gvR-FP-AB5"/>
+                            <constraint firstAttribute="trailing" secondItem="G87-hO-eBl" secondAttribute="trailing" id="iEl-CY-wcS"/>
+                            <constraint firstItem="Rog-B4-RmT" firstAttribute="height" secondItem="kgm-A2-9Jm" secondAttribute="height" id="kGa-CY-B7V"/>
+                            <constraint firstItem="G87-hO-eBl" firstAttribute="leading" secondItem="dc3-hW-ZDy" secondAttribute="leading" id="lEt-kG-GpK"/>
+                            <constraint firstItem="TPs-kr-EBL" firstAttribute="leading" secondItem="dc3-hW-ZDy" secondAttribute="leading" id="moH-vB-7T3"/>
+                            <constraint firstItem="gmt-3M-U2n" firstAttribute="top" secondItem="G87-hO-eBl" secondAttribute="bottom" constant="5" id="ngV-Sx-VeZ"/>
+                            <constraint firstAttribute="trailing" secondItem="gmt-3M-U2n" secondAttribute="trailing" id="pYb-U8-BZm"/>
+                            <constraint firstItem="kgm-A2-9Jm" firstAttribute="leading" secondItem="dc3-hW-ZDy" secondAttribute="leading" id="uS3-9q-4p1"/>
+                            <constraint firstItem="7jC-0d-0FY" firstAttribute="leading" secondItem="dc3-hW-ZDy" secondAttribute="leading" id="wfT-wO-upy"/>
+                            <constraint firstItem="Rog-B4-RmT" firstAttribute="top" secondItem="7jC-0d-0FY" secondAttribute="bottom" constant="-10" id="xO4-no-bLr"/>
+                            <constraint firstItem="Rog-B4-RmT" firstAttribute="leading" secondItem="dc3-hW-ZDy" secondAttribute="leading" id="yEr-r0-yAR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oiK-Sa-dxZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PrK-JM-vFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228.5" y="241.5"/>
+            <point key="canvasLocation" x="56.5" y="250.5"/>
         </scene>
         <!--All Recipes-->
         <scene sceneID="X2b-W1-bUS">
@@ -106,7 +119,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Y41-jB-lrL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Exs-DT-OCs">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -124,7 +137,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wM8-kd-mfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228.5" y="-526.5"/>
+            <point key="canvasLocation" x="708.5" y="-572.5"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="L6N-0w-C0t">
@@ -133,7 +146,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="sLK-WI-Bhy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="fqX-mL-Ogg">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -151,7 +164,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZj-Ve-isS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658.5" y="-526.5"/>
+            <point key="canvasLocation" x="708.5" y="250.5"/>
         </scene>
         <!--Friends Recipes-->
         <scene sceneID="XZ9-NM-PWf">
@@ -160,7 +173,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DcG-IX-m3I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="3Rb-sK-QFG">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -178,7 +191,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zN-qE-2PP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658.5" y="1035.5"/>
+            <point key="canvasLocation" x="56.5" y="1151.5"/>
         </scene>
         <!--My Recipes-->
         <scene sceneID="CBB-Xy-mAv">
@@ -187,7 +200,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aUV-I6-laP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="6yJ-iF-yVn">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -205,7 +218,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGg-kM-9t6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228.5" y="1035.5"/>
+            <point key="canvasLocation" x="-559.5" y="1151.5"/>
         </scene>
         <!--Shopping Cart-->
         <scene sceneID="nAy-kS-6gs">
@@ -214,7 +227,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bhn-ae-K7x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="zdW-QT-X0g">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -232,7 +245,16 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVI-qd-VXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658.5" y="241.5"/>
+            <point key="canvasLocation" x="708.5" y="1151.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backBlur.jpg" width="420" height="262"/>
+        <image name="btn1.png" width="906" height="258"/>
+        <image name="btn2.png" width="960" height="258"/>
+        <image name="btn3.png" width="906" height="258"/>
+        <image name="btn4.png" width="906" height="258"/>
+        <image name="btn5.png" width="906" height="258"/>
+        <image name="menuImage.jpg" width="1920" height="1080"/>
+    </resources>
 </document>
