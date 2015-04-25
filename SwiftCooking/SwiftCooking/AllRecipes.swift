@@ -1,111 +1,42 @@
 //
-//  AllRecipes.swift
+//  AllRecipesCollectionViewController.swift
 //  SwiftCooking
 //
-//  Created by Flávio Silvério on 22/04/15.
+//  Created by Flávio Silvério on 26/04/15.
 //  Copyright (c) 2015 Flávio Silvério. All rights reserved.
 //
 
 import UIKit
 
-class AllRecipes: UITableViewController {
+
+let reuseIdentifier = "Cell"
+
+class AllRecipes: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+                // ...
+        self.collectionView?.collectionViewLayout = RFQuiltLayout()
+//        RFQuiltLayout* layout = (id)[self.collectionView collectionViewLayout];
+//        self.collectionView?.collectionViewLayout.direction = UICollectionViewScrollDirectionVertical
+//        self.collectionView?.collectionViewLayout.blockPixels = CGSizeMake(100, 100);
+        
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        print(self.collectionView?.collectionViewLayout)
+        // Register cell classes
+        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 4
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 3
-    }
-
-    
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch(section){
-            
-        case 0:
-            return "Starters"
-        case 1:
-            return "Mains"
-        case 2:
-            return "Desserts"
-        case 3:
-            return "Drinks"
-            
-        default:
-                return ""
-        }
-        
-
-
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
-
-
-        cell.textLabel?.text = "This is something"
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-        // Configure the cell...
-
-        return cell
-    }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation
@@ -117,4 +48,66 @@ class AllRecipes: UITableViewController {
     }
     */
 
+    // MARK: UICollectionViewDataSource
+
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        //#warning Incomplete method implementation -- Return the number of sections
+        return 1
+    }
+
+
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //#warning Incomplete method implementation -- Return the number of items in the section
+        return 3
+    }
+
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
+    
+        // Configure the cell
+    
+        return cell
+    }
+
+    // MARK: UICollectionViewDelegate
+
+    /*
+    // Uncomment this method to specify if the specified item should be highlighted during tracking
+    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    */
+
+    /*
+    // Uncomment this method to specify if the specified item should be selected
+    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    */
+
+    /*
+    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+
+    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
+        return false
+    }
+
+    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
+    
+    }
+    */
+//    func blockSizeForItemAtIndexPath(indexPath: NSIndexPath) -> CGsize{
+//    
+//        switch()
+//    
+//    }
+//    - (CGSize) blockSizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+//    if (indexPath.row % 2 == 0)
+//    return CGSizeMake(2, 1);
+//    
+//    return CGSizeMake(1, 2);
+//    }
 }

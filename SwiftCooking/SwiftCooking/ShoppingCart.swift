@@ -29,8 +29,7 @@ class ShoppingCart: UITableViewController {
        // let navigationItem = UIBarButtonItem()
         NSLog("%@",data.keys.array)
         //navigationItem.title="+"
-        let navigationItemEdit = UIBarButtonItem()
-        navigationItemEdit.title = "Edit"
+        let navigationItemEdit = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: Selector(enterEdit()))
         
         
         
@@ -155,6 +154,12 @@ class ShoppingCart: UITableViewController {
     }
     */
 
+    func enterEdit(){
+    
+        self.tableView.editing = !self.tableView.editing
+        self.tableView.reloadData()
+    }
+    
     // MARK: - getting the data
     func getData(){
     

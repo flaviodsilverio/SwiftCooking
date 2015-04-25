@@ -81,7 +81,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="feR-Tp-3qx" kind="show" id="fjw-iO-Lja"/>
+                                    <segue destination="a2m-9x-2nW" kind="show" id="2aE-se-pY7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -127,33 +127,6 @@
             </objects>
             <point key="canvasLocation" x="56.5" y="250.5"/>
         </scene>
-        <!--All Recipes-->
-        <scene sceneID="X2b-W1-bUS">
-            <objects>
-                <tableViewController id="feR-Tp-3qx" customClass="AllRecipes" customModule="SwiftCooking" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Y41-jB-lrL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Exs-DT-OCs">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Exs-DT-OCs" id="bVd-iD-N8g">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="feR-Tp-3qx" id="ezB-gf-f5h"/>
-                            <outlet property="delegate" destination="feR-Tp-3qx" id="IG1-hb-FRG"/>
-                        </connections>
-                    </tableView>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wM8-kd-mfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="708.5" y="-572.5"/>
-        </scene>
         <!--Favourites-->
         <scene sceneID="L6N-0w-C0t">
             <objects>
@@ -180,6 +153,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZj-Ve-isS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708.5" y="250.5"/>
+        </scene>
+        <!--All Recipes-->
+        <scene sceneID="Ydr-DZ-IHT">
+            <objects>
+                <collectionViewController title="All Recipes" id="a2m-9x-2nW" customClass="AllRecipes" customModule="SwiftCooking" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="WSo-dR-qh6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.96204682867932645" green="0.96438099142929923" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="30x-WC-tWJ">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5Yw-HN-bfg">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="a2m-9x-2nW" id="J0i-jm-qHj"/>
+                            <outlet property="delegate" destination="a2m-9x-2nW" id="9Kh-o6-6Xf"/>
+                        </connections>
+                    </collectionView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q7h-de-Rm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708.5" y="-482.5"/>
         </scene>
         <!--Friends Recipes-->
         <scene sceneID="XZ9-NM-PWf">

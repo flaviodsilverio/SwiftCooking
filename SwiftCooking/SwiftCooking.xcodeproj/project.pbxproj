@@ -14,11 +14,12 @@
 		1B3F17BE1AE8400E00A70A56 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B3F17BD1AE8400E00A70A56 /* Images.xcassets */; };
 		1B3F17C11AE8400E00A70A56 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B3F17BF1AE8400E00A70A56 /* LaunchScreen.xib */; };
 		1B3F17CD1AE8400E00A70A56 /* SwiftCookingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F17CC1AE8400E00A70A56 /* SwiftCookingTests.swift */; };
-		1B3F17D81AE842D900A70A56 /* AllRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F17D71AE842D900A70A56 /* AllRecipes.swift */; };
 		1B3F17DA1AE842EA00A70A56 /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F17D91AE842EA00A70A56 /* Favourites.swift */; };
 		1B3F17DC1AE842FC00A70A56 /* FriendsRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F17DB1AE842FC00A70A56 /* FriendsRecipes.swift */; };
 		1B3F17DE1AE8430A00A70A56 /* My Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F17DD1AE8430A00A70A56 /* My Recipes.swift */; };
 		1B3F17E01AE8432E00A70A56 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F17DF1AE8432E00A70A56 /* ShoppingCart.swift */; };
+		1BA60E901AEC587500EAA2F8 /* AllRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA60E8F1AEC587500EAA2F8 /* AllRecipes.swift */; };
+		1BA60E971AEC5A0400EAA2F8 /* RFQuiltLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA60E961AEC5A0400EAA2F8 /* RFQuiltLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,11 +44,14 @@
 		1B3F17C61AE8400E00A70A56 /* SwiftCookingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCookingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3F17CB1AE8400E00A70A56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B3F17CC1AE8400E00A70A56 /* SwiftCookingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCookingTests.swift; sourceTree = "<group>"; };
-		1B3F17D71AE842D900A70A56 /* AllRecipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllRecipes.swift; sourceTree = "<group>"; };
 		1B3F17D91AE842EA00A70A56 /* Favourites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favourites.swift; sourceTree = "<group>"; };
 		1B3F17DB1AE842FC00A70A56 /* FriendsRecipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsRecipes.swift; sourceTree = "<group>"; };
 		1B3F17DD1AE8430A00A70A56 /* My Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "My Recipes.swift"; sourceTree = "<group>"; };
 		1B3F17DF1AE8432E00A70A56 /* ShoppingCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		1BA60E8F1AEC587500EAA2F8 /* AllRecipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllRecipes.swift; sourceTree = "<group>"; };
+		1BA60E911AEC595600EAA2F8 /* SwiftCooking-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftCooking-Bridging-Header.h"; sourceTree = "<group>"; };
+		1BA60E951AEC5A0400EAA2F8 /* RFQuiltLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFQuiltLayout.h; sourceTree = "<group>"; };
+		1BA60E961AEC5A0400EAA2F8 /* RFQuiltLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFQuiltLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 			children = (
 				1B3F17D61AE842AF00A70A56 /* View Controllers */,
 				1B3F17B31AE8400E00A70A56 /* AppDelegate.swift */,
+				1BA60E911AEC595600EAA2F8 /* SwiftCooking-Bridging-Header.h */,
 				1B3F17BA1AE8400E00A70A56 /* Main.storyboard */,
 				1B3F17BD1AE8400E00A70A56 /* Images.xcassets */,
 				1B3F17BF1AE8400E00A70A56 /* LaunchScreen.xib */,
@@ -128,12 +133,14 @@
 		1B3F17D61AE842AF00A70A56 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1BA60E951AEC5A0400EAA2F8 /* RFQuiltLayout.h */,
+				1BA60E961AEC5A0400EAA2F8 /* RFQuiltLayout.m */,
 				1B3F17B81AE8400E00A70A56 /* MainMenu.swift */,
-				1B3F17D71AE842D900A70A56 /* AllRecipes.swift */,
 				1B3F17D91AE842EA00A70A56 /* Favourites.swift */,
 				1B3F17DB1AE842FC00A70A56 /* FriendsRecipes.swift */,
 				1B3F17DD1AE8430A00A70A56 /* My Recipes.swift */,
 				1B3F17DF1AE8432E00A70A56 /* ShoppingCart.swift */,
+				1BA60E8F1AEC587500EAA2F8 /* AllRecipes.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -240,10 +247,11 @@
 			files = (
 				1B3F17DA1AE842EA00A70A56 /* Favourites.swift in Sources */,
 				1B3F17DC1AE842FC00A70A56 /* FriendsRecipes.swift in Sources */,
+				1BA60E901AEC587500EAA2F8 /* AllRecipes.swift in Sources */,
 				1B3F17B91AE8400E00A70A56 /* MainMenu.swift in Sources */,
 				1B3F17B71AE8400E00A70A56 /* SwiftCooking.xcdatamodeld in Sources */,
 				1B3F17B41AE8400E00A70A56 /* AppDelegate.swift in Sources */,
-				1B3F17D81AE842D900A70A56 /* AllRecipes.swift in Sources */,
+				1BA60E971AEC5A0400EAA2F8 /* RFQuiltLayout.m in Sources */,
 				1B3F17DE1AE8430A00A70A56 /* My Recipes.swift in Sources */,
 				1B3F17E01AE8432E00A70A56 /* ShoppingCart.swift in Sources */,
 			);
@@ -374,9 +382,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftCooking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftCooking/SwiftCooking-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -384,9 +395,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftCooking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftCooking/SwiftCooking-Bridging-Header.h";
 			};
 			name = Release;
 		};
