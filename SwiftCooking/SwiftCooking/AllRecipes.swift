@@ -11,24 +11,23 @@ import UIKit
 
 let reuseIdentifier = "Cell"
 
-class AllRecipes: UICollectionViewController {
+class AllRecipes:  UITableViewController, CustomCollectionDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
+        //var teste = CustomCollection()
                 // ...
-        self.collectionView?.collectionViewLayout = RFQuiltLayout()
 //        RFQuiltLayout* layout = (id)[self.collectionView collectionViewLayout];
 //        self.collectionView?.collectionViewLayout.direction = UICollectionViewScrollDirectionVertical
 //        self.collectionView?.collectionViewLayout.blockPixels = CGSizeMake(100, 100);
         
 
-        print(self.collectionView?.collectionViewLayout)
         // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -47,67 +46,65 @@ class AllRecipes: UICollectionViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        //#warning Incomplete method implementation -- Return the number of sections
-        return 1
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1;
     }
-
-
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //#warning Incomplete method implementation -- Return the number of items in the section
-        return 3
-    }
-
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
     
-        // Configure the cell
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 5;
+    }
     
-        return cell
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 250
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Title Example"
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+    
+    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "Total: 25"
     }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        //var cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell2")
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as? UITableViewCell
+        
+        if(cell==nil){
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell2")
+        }
+        
+        var scroll = cell!.viewWithTag(101) as! UIScrollView
+        self.generateRecipeViews(scroll)
+        //scroll.contentSize = CGSizeMake(1000, 150)
+        
+        
+        return cell!
     }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
+    
+    //MARK: Collection delegate methods
+    func numberOfColumns(){
     
     }
-    */
-//    func blockSizeForItemAtIndexPath(indexPath: NSIndexPath) -> CGsize{
-//    
-//        switch()
-//    
-//    }
-//    - (CGSize) blockSizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.row % 2 == 0)
-//    return CGSizeMake(2, 1);
-//    
-//    return CGSizeMake(1, 2);
-//    }
+
+
+    
+    func generateRecipeViews(scroll:UIScrollView){
+    
+        let numberOfViews = Int(arc4random_uniform(10))
+        
+        for var i = 0 ; i < numberOfViews; i++ {
+        
+            var view = UIView()
+            view.frame = CGRectMake(CGFloat(10 + i*210), 10, 200, scroll.frame.height-20)
+            view.backgroundColor = UIColor.grayColor()
+            
+            
+            scroll.addSubview(view)
+            
+        }
+    
+        scroll.contentSize = CGSizeMake(CGFloat(215 * numberOfViews), 150)
+    }
 }
