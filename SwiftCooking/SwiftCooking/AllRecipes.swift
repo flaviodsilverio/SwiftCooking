@@ -72,7 +72,7 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as? UITableViewCell
         
         if(cell==nil){
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell2")
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         }
         
         var scroll = cell!.viewWithTag(101) as! UIScrollView
@@ -92,19 +92,71 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
     
     func generateRecipeViews(scroll:UIScrollView){
     
-        let numberOfViews = Int(arc4random_uniform(10))
+        let numberOfViews = 50//Int(arc4random_uniform(10))
         
         for var i = 0 ; i < numberOfViews; i++ {
         
-            var view = UIView()
+            var view = UIButton()
             view.frame = CGRectMake(CGFloat(10 + i*210), 10, 200, scroll.frame.height-20)
             view.backgroundColor = UIColor.grayColor()
+            view.addTarget(self, action: "animate:", forControlEvents: UIControlEvents.TouchDown)
             
+            var label = UILabel()
+            label.frame = CGRectMake(0, 0, 200, 25)
+            view.addSubview(label)
+            label.text = "Francesinha"
+            label.textAlignment = NSTextAlignment.Center;
+            label.textColor = UIColor.whiteColor()
+            
+            var image = UIImageView(frame: CGRectMake(0, 25, 200, view.frame.height))
+            image.image = UIImage(named: "francesinha")
+            
+            view.addSubview(image)
             
             scroll.addSubview(view)
             
         }
     
         scroll.contentSize = CGSizeMake(CGFloat(215 * numberOfViews), 150)
+    }
+    
+    func animate(sender:UIButton!){
+    
+        print(sender.frame)
+        
+        var shade = UIView(frame: CGRectMake(0, 0, 0, 0))
+        shade.backgroundColor = UIColor.blackColor()
+        shade.alpha = 0.5
+        
+        self.view.addSubview(shade)
+        
+        var view = UIView()
+        view.frame = CGRectMake(0, 0, 0, 0)
+//        view.center = sender.center
+        view.backgroundColor = UIColor.grayColor()
+        self.view.addSubview(view)
+        
+        var label = UILabel(frame: CGRectMake(0, 0, 0, 0))
+        label.text = "Francesinha"
+        label.textAlignment = NSTextAlignment.Center;
+        label.textColor = UIColor.whiteColor()
+        
+        var image = UIImageView(frame: CGRectMake(0, 0, 0, 0))
+        image.image = UIImage(named: "francesinha")
+        
+        self.tableView.userInteractionEnabled = false
+        
+        view.addSubview(label)
+        view.addSubview(image)
+        
+        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+
+            shade.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+            view.frame = CGRectMake(25, 20, self.view.frame.width-50, self.view.frame.height-100)
+            label.frame = CGRectMake(0, 0, self.view.frame.width-50, 25)
+            image.frame = CGRectMake(0, 25, self.view.frame.width-50, 250)
+
+            
+            }, completion: nil)
     }
 }
