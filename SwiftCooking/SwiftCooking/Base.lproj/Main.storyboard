@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="A3X-EP-T23" kind="relationship" relationship="rootViewController" id="Z7G-uD-YJt"/>
+                        <segue destination="Ej0-6d-6rX" kind="relationship" relationship="rootViewController" id="frO-Gh-PtH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yv-u2-ygd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuImage" translatesAutoresizingMaskIntoConstraints="NO" id="7jC-0d-0FY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="menuImage" translatesAutoresizingMaskIntoConstraints="NO" id="7jC-0d-0FY">
                                 <rect key="frame" x="0.0" y="44" width="375" height="330"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backBlur" translatesAutoresizingMaskIntoConstraints="NO" id="8BS-Re-sbz">
@@ -159,6 +159,57 @@
             </objects>
             <point key="canvasLocation" x="729.5" y="-541.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="DqF-qP-Zqx">
+            <objects>
+                <viewController id="Ej0-6d-6rX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A8e-0C-4No"/>
+                        <viewControllerLayoutGuide type="bottom" id="2i5-oU-bhB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LO8-qi-dgD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjR-Ns-y0F">
+                                <rect key="frame" x="0.0" y="64" width="375" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="WIb-jI-o8m"/>
+                                    <constraint firstAttribute="height" constant="47" id="dZ8-Q5-9ai"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dZ8-Q5-9ai"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="francesinha" translatesAutoresizingMaskIntoConstraints="NO" id="3mc-X7-DPi">
+                                <rect key="frame" x="0.0" y="119" width="375" height="246"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="246" id="3pK-CS-u7I"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3mc-X7-DPi" firstAttribute="width" secondItem="LO8-qi-dgD" secondAttribute="width" id="3gf-g5-KgP"/>
+                            <constraint firstItem="3mc-X7-DPi" firstAttribute="top" secondItem="A8e-0C-4No" secondAttribute="bottom" constant="55" id="5Xi-t7-QkA"/>
+                            <constraint firstAttribute="centerX" secondItem="FjR-Ns-y0F" secondAttribute="centerX" id="CLP-t3-HgC"/>
+                            <constraint firstAttribute="centerX" secondItem="3mc-X7-DPi" secondAttribute="centerX" id="DnZ-CM-h2x"/>
+                            <constraint firstItem="FjR-Ns-y0F" firstAttribute="top" secondItem="A8e-0C-4No" secondAttribute="bottom" id="TZW-h8-PPb"/>
+                            <constraint firstItem="FjR-Ns-y0F" firstAttribute="width" secondItem="LO8-qi-dgD" secondAttribute="width" id="acT-ND-gSw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="C77-DA-Kl2"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Is4-kT-6ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1380.5" y="-541.5"/>
+        </scene>
         <!--Favourites-->
         <scene sceneID="L6N-0w-C0t">
             <objects>
@@ -275,6 +326,7 @@
         <image name="btn3" width="906" height="258"/>
         <image name="btn4" width="906" height="258"/>
         <image name="btn5" width="906" height="258"/>
+        <image name="francesinha" width="4320" height="2432"/>
         <image name="menuImage" width="1920" height="1080"/>
     </resources>
 </document>

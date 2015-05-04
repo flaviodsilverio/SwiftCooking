@@ -127,11 +127,12 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
         var shade = UIView(frame: CGRectMake(0, 0, 0, 0))
         shade.backgroundColor = UIColor.blackColor()
         shade.alpha = 0.5
-        
+        shade.center = self.view.center;
         self.view.addSubview(shade)
         
         var view = UIView()
         view.frame = CGRectMake(0, 0, 0, 0)
+        view.center = self.view.center;
 //        view.center = sender.center
         view.backgroundColor = UIColor.grayColor()
         self.view.addSubview(view)
@@ -140,9 +141,14 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
         label.text = "Francesinha"
         label.textAlignment = NSTextAlignment.Center;
         label.textColor = UIColor.whiteColor()
+        label.center = view.center;
+        label.alpha=0;
         
         var image = UIImageView(frame: CGRectMake(0, 0, 0, 0))
         image.image = UIImage(named: "francesinha")
+        image.center = view.center;
+        image.alpha=0;
+
         
         self.tableView.userInteractionEnabled = false
         
@@ -155,7 +161,8 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
             view.frame = CGRectMake(25, 20, self.view.frame.width-50, self.view.frame.height-100)
             label.frame = CGRectMake(0, 0, self.view.frame.width-50, 25)
             image.frame = CGRectMake(0, 25, self.view.frame.width-50, 250)
-
+            image.alpha=1;
+            label.alpha=1;
             
             }, completion: nil)
     }
