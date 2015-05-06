@@ -92,14 +92,14 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
     
     func generateRecipeViews(scroll:UIScrollView){
     
-        let numberOfViews = 50//Int(arc4random_uniform(10))
+        let numberOfViews = 10//Int(arc4random_uniform(10))
         
         for var i = 0 ; i < numberOfViews; i++ {
         
             var view = UIButton()
             view.frame = CGRectMake(CGFloat(10 + i*210), 10, 200, scroll.frame.height-20)
             view.backgroundColor = UIColor.grayColor()
-            view.addTarget(self, action: "animate:", forControlEvents: UIControlEvents.TouchDown)
+            //view.addTarget(self, action: "animate:", forControlEvents: UIControlEvents.TouchDown)
             
             var label = UILabel()
             label.frame = CGRectMake(0, 0, 200, 25)
