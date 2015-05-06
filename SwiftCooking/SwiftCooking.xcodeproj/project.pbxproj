@@ -20,7 +20,7 @@
 		1B3F17E01AE8432E00A70A56 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F17DF1AE8432E00A70A56 /* ShoppingCart.swift */; };
 		1B7CD9411AED558C00D20941 /* CustomCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7CD9401AED558C00D20941 /* CustomCollection.swift */; };
 		1BA60E901AEC587500EAA2F8 /* AllRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA60E8F1AEC587500EAA2F8 /* AllRecipes.swift */; };
-		1BA60E971AEC5A0400EAA2F8 /* RFQuiltLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA60E961AEC5A0400EAA2F8 /* RFQuiltLayout.m */; };
+		1BD278331AF960F900EBB32B /* RecipeSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD278321AF960F900EBB32B /* RecipeSummary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,7 @@
 		1B7CD9401AED558C00D20941 /* CustomCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollection.swift; sourceTree = "<group>"; };
 		1BA60E8F1AEC587500EAA2F8 /* AllRecipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllRecipes.swift; sourceTree = "<group>"; };
 		1BA60E911AEC595600EAA2F8 /* SwiftCooking-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftCooking-Bridging-Header.h"; sourceTree = "<group>"; };
-		1BA60E951AEC5A0400EAA2F8 /* RFQuiltLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFQuiltLayout.h; sourceTree = "<group>"; };
-		1BA60E961AEC5A0400EAA2F8 /* RFQuiltLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFQuiltLayout.m; sourceTree = "<group>"; };
+		1BD278321AF960F900EBB32B /* RecipeSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSummary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,14 +135,13 @@
 		1B3F17D61AE842AF00A70A56 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1BA60E951AEC5A0400EAA2F8 /* RFQuiltLayout.h */,
-				1BA60E961AEC5A0400EAA2F8 /* RFQuiltLayout.m */,
 				1B3F17B81AE8400E00A70A56 /* MainMenu.swift */,
 				1B3F17D91AE842EA00A70A56 /* Favourites.swift */,
 				1B3F17DB1AE842FC00A70A56 /* FriendsRecipes.swift */,
 				1B3F17DD1AE8430A00A70A56 /* My Recipes.swift */,
 				1B3F17DF1AE8432E00A70A56 /* ShoppingCart.swift */,
 				1BA60E8F1AEC587500EAA2F8 /* AllRecipes.swift */,
+				1BD278321AF960F900EBB32B /* RecipeSummary.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -263,8 +261,8 @@
 				1B3F17B91AE8400E00A70A56 /* MainMenu.swift in Sources */,
 				1B3F17B71AE8400E00A70A56 /* SwiftCooking.xcdatamodeld in Sources */,
 				1B3F17B41AE8400E00A70A56 /* AppDelegate.swift in Sources */,
-				1BA60E971AEC5A0400EAA2F8 /* RFQuiltLayout.m in Sources */,
 				1B3F17DE1AE8430A00A70A56 /* My Recipes.swift in Sources */,
+				1BD278331AF960F900EBB32B /* RecipeSummary.swift in Sources */,
 				1B3F17E01AE8432E00A70A56 /* ShoppingCart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

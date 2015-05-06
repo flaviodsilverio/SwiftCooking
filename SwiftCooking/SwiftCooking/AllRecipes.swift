@@ -11,11 +11,14 @@ import UIKit
 
 let reuseIdentifier = "Cell"
 
-class AllRecipes:  UITableViewController, CustomCollectionDelegate {
+class AllRecipes:  UIViewController, CustomCollectionDelegate, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -46,27 +49,27 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1;
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 5;
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 250
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Title Example"
     }
     
-    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return "Total: 25"
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //var cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell2")
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as? UITableViewCell
@@ -88,7 +91,19 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
     
     }
 
-
+    func launchDetails(){
+        
+        let childController = self.storyboard?.instantiateViewControllerWithIdentifier("RecipeSummary") as! UIViewController!
+        addChildViewController(childController)
+        childController.view.frame = self.view.frame
+        self.view.addSubview(childController.view)
+        childController.didMoveToParentViewController(self)
+        self.childViewControllers
+        //var childView = RecipeSummary()
+       // self.view.addSubview(childView.view)
+        
+        //self.performSegueWithIdentifier("showDetails", sender: self)
+    }
     
     func generateRecipeViews(scroll:UIScrollView){
     
@@ -99,8 +114,8 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
             var view = UIButton()
             view.frame = CGRectMake(CGFloat(10 + i*210), 10, 200, scroll.frame.height-20)
             view.backgroundColor = UIColor.grayColor()
-            view.addTarget(self, action: "animate:", forControlEvents: UIControlEvents.TouchDown)
-            
+           // view.addTarget(self, action: "animate:", forControlEvents: UIControlEvents.TouchDown)
+            view.addTarget(self, action: "launchDetails", forControlEvents: UIControlEvents.TouchDown)
             var label = UILabel()
             label.frame = CGRectMake(0, 0, 200, 25)
             view.addSubview(label)
@@ -121,8 +136,8 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
     }
     
     func animate(sender:UIButton!){
-    
-        print(sender.frame)
+        
+       // self.tableView.userInteractionEnabled = false
         
         var shade = UIView(frame: CGRectMake(0, 0, 0, 0))
         shade.backgroundColor = UIColor.blackColor()
@@ -149,8 +164,6 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
         image.center = view.center;
         image.alpha=0;
 
-        
-        self.tableView.userInteractionEnabled = false
         
         view.addSubview(label)
         view.addSubview(image)
