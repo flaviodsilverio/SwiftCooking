@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kff-QV-OxL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kff-QV-OxL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -196,17 +196,113 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bls-bb-yyw">
-                                <rect key="frame" x="16" y="73" width="343" height="574"/>
+                                <rect key="frame" x="30" y="93" width="315" height="540"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="zsL-fD-cBp">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="540"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" rowHeight="60" id="0CT-NZ-YNh">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0CT-NZ-YNh" id="Ev1-Gc-ICj">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Francesinha" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRX-VR-6oc">
+                                                            <rect key="frame" x="0.0" y="0.0" width="315" height="59"/>
+                                                            <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="30"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="centerY" secondItem="gRX-VR-6oc" secondAttribute="centerY" id="P97-8n-5X5"/>
+                                                        <constraint firstAttribute="centerX" secondItem="gRX-VR-6oc" secondAttribute="centerX" id="qla-0P-mTl"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="200" id="xNg-LD-vrL">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xNg-LD-vrL" id="9Lx-nw-ljD">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="francesinha" translatesAutoresizingMaskIntoConstraints="NO" id="LOQ-0h-vo5">
+                                                            <rect key="frame" x="0.0" y="0.0" width="315" height="199"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="LOQ-0h-vo5" secondAttribute="bottom" constant="-8" id="3IT-po-Om0"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="LOQ-0h-vo5" secondAttribute="trailing" constant="-8" id="Jmc-Ma-E4D"/>
+                                                        <constraint firstItem="LOQ-0h-vo5" firstAttribute="top" secondItem="9Lx-nw-ljD" secondAttribute="topMargin" constant="-8" id="avP-ag-OCB"/>
+                                                        <constraint firstItem="LOQ-0h-vo5" firstAttribute="leading" secondItem="9Lx-nw-ljD" secondAttribute="leadingMargin" constant="-8" id="w9P-lF-Nkm"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="J9u-bI-H3U">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J9u-bI-H3U" id="eki-Jf-mBh">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientCell" id="7xv-0u-Zbu">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7xv-0u-Zbu" id="qi0-Jg-k54">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="stepCell" id="b9U-cC-CWb">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b9U-cC-CWb" id="Otx-ly-IVV">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BiZ-8F-m89" id="qyn-6D-UIm"/>
+                                            <outlet property="delegate" destination="BiZ-8F-m89" id="Nze-Xe-yFQ"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="zsL-fD-cBp" secondAttribute="centerX" id="GkP-He-TC9"/>
+                                    <constraint firstAttribute="width" secondItem="zsL-fD-cBp" secondAttribute="width" id="PdL-qM-rh9"/>
+                                    <constraint firstAttribute="width" secondItem="zsL-fD-cBp" secondAttribute="width" id="TN9-jd-4Bj"/>
+                                    <constraint firstAttribute="height" secondItem="zsL-fD-cBp" secondAttribute="height" id="flw-5Q-hIv"/>
+                                    <constraint firstAttribute="centerY" secondItem="zsL-fD-cBp" secondAttribute="centerY" id="iXm-fd-qgK"/>
+                                    <constraint firstAttribute="height" secondItem="zsL-fD-cBp" secondAttribute="height" id="neI-Bf-zhw"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PdL-qM-rh9"/>
+                                        <exclude reference="neI-Bf-zhw"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bls-bb-yyw" firstAttribute="leading" secondItem="KHk-JR-uBA" secondAttribute="leadingMargin" constant="14" id="B6Q-6N-57y"/>
                             <constraint firstItem="bls-bb-yyw" firstAttribute="trailing" secondItem="KHk-JR-uBA" secondAttribute="trailingMargin" id="WFK-qZ-h0a"/>
+                            <constraint firstItem="bls-bb-yyw" firstAttribute="top" secondItem="ZFB-5r-JTN" secondAttribute="bottom" constant="29" id="ZRk-4k-KTX"/>
                             <constraint firstItem="3MW-Ma-OW8" firstAttribute="top" secondItem="bls-bb-yyw" secondAttribute="bottom" constant="20" id="dUM-Ob-Dsf"/>
                             <constraint firstItem="bls-bb-yyw" firstAttribute="leading" secondItem="KHk-JR-uBA" secondAttribute="leadingMargin" id="ih3-Fz-SED"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bls-bb-yyw" secondAttribute="trailing" constant="14" id="npx-Ax-ZhL"/>
                             <constraint firstItem="bls-bb-yyw" firstAttribute="top" secondItem="ZFB-5r-JTN" secondAttribute="bottom" constant="9" id="rcd-3w-02r"/>
+                            <constraint firstItem="3MW-Ma-OW8" firstAttribute="top" secondItem="bls-bb-yyw" secondAttribute="bottom" constant="34" id="sf9-Ee-Yxx"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WFK-qZ-h0a"/>
+                                <exclude reference="ih3-Fz-SED"/>
+                                <exclude reference="rcd-3w-02r"/>
+                                <exclude reference="dUM-Ob-Dsf"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
