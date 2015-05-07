@@ -107,7 +107,7 @@ class AllRecipes:  UIViewController, CustomCollectionDelegate, UITableViewDataSo
     
     func generateRecipeViews(scroll:UIScrollView){
     
-        let numberOfViews = 50//Int(arc4random_uniform(10))
+        let numberOfViews = 10//Int(arc4random_uniform(10))
         
         for var i = 0 ; i < numberOfViews; i++ {
         
