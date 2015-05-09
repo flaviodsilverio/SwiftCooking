@@ -11,7 +11,7 @@ import UIKit
 
 let reuseIdentifier = "Cell"
 
-class AllRecipes:  UITableViewController, CustomCollectionDelegate {
+class AllRecipes:  UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +50,11 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
         return 1;
     }
     
+   /*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 5;
     }
+    
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100
@@ -65,7 +67,7 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
     override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return nil
     }
-    
+    */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //var cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell2")
@@ -75,8 +77,8 @@ class AllRecipes:  UITableViewController, CustomCollectionDelegate {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell2")
         }
         
-        var scroll = cell!.viewWithTag(101) as! UIScrollView
-        self.generateRecipeViews(scroll)
+        //var scroll = cell!.viewWithTag(101) as! UIScrollView
+        //self.generateRecipeViews(scroll)
         //scroll.contentSize = CGSizeMake(1000, 150)
         
         

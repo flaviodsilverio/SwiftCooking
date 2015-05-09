@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kff-QV-OxL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -49,8 +48,8 @@
                                     <segue destination="l1X-ya-eMi" kind="show" id="fk8-uB-X9o"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmt-3M-U2n" userLabel="My Recipes">
-                                <rect key="frame" x="0.0" y="484" width="375" height="258"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmt-3M-U2n" userLabel="My Recipes">
+                                <rect key="frame" x="0.0" y="487" width="375" height="57"/>
                                 <state key="normal" title="My Recipes" backgroundImage="btn3">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -67,8 +66,8 @@
                                     <segue destination="i3B-vh-jd7" kind="show" id="VZY-FI-V6Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPs-kr-EBL" userLabel="Shopping Cart">
-                                <rect key="frame" x="0.0" y="610" width="375" height="258"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPs-kr-EBL" userLabel="Shopping Cart">
+                                <rect key="frame" x="0.0" y="610" width="375" height="57"/>
                                 <state key="normal" title="Shopping Cart" backgroundImage="btn5">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -76,13 +75,13 @@
                                     <segue destination="M6a-f6-vl6" kind="show" id="57L-Zn-lLl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rog-B4-RmT" userLabel="All Recipes">
-                                <rect key="frame" x="0.0" y="361" width="906" height="258"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rog-B4-RmT" userLabel="All Recipes">
+                                <rect key="frame" x="0.0" y="364" width="375" height="57"/>
                                 <state key="normal" title="All Recipes" backgroundImage="btn1">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="N6Q-LV-SfR" kind="show" id="cSD-W5-nlc"/>
+                                    <segue destination="pEO-oy-B0f" kind="show" id="xhx-hr-GHl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -142,17 +141,11 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="71X-Po-R6k" id="cAX-TH-ZM7">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3VH-h0-ram">
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXZ-dd-1Cu" customClass="HorizontalScroll" customModule="SwiftCooking" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
-                                        </scrollView>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="3VH-h0-ram" secondAttribute="bottom" constant="-8" id="Jf1-7k-jw4"/>
-                                        <constraint firstItem="3VH-h0-ram" firstAttribute="top" secondItem="cAX-TH-ZM7" secondAttribute="top" id="SH0-wx-Iej"/>
-                                        <constraint firstAttribute="bottom" secondItem="3VH-h0-ram" secondAttribute="bottom" id="UOl-fc-cLF"/>
-                                        <constraint firstAttribute="trailing" secondItem="3VH-h0-ram" secondAttribute="trailing" id="Wff-Tf-xqJ"/>
-                                        <constraint firstItem="3VH-h0-ram" firstAttribute="leading" secondItem="cAX-TH-ZM7" secondAttribute="leading" id="eGM-vS-snN"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -165,7 +158,49 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZm-LE-toP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729.5" y="-541.5"/>
+            <point key="canvasLocation" x="101.5" y="-585.5"/>
+        </scene>
+        <!--Recipe Selection Table View Controller-->
+        <scene sceneID="HQR-qE-pKB">
+            <objects>
+                <tableViewController id="pEO-oy-B0f" customClass="RecipeSelectionTableViewController" customModule="SwiftCooking" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="311" sectionHeaderHeight="22" sectionFooterHeight="22" id="m6p-L5-50t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="311" id="kRg-Kc-iBJ" customClass="RecipeSelectionTableViewCell" customModule="SwiftCooking" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kRg-Kc-iBJ" id="eM9-US-1MR">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abj-Lt-kFY" customClass="HorizontalScroll" customModule="SwiftCooking" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="10" width="355" height="290"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="abj-Lt-kFY" secondAttribute="trailing" constant="10" id="Knw-3Q-qXb"/>
+                                        <constraint firstItem="abj-Lt-kFY" firstAttribute="top" secondItem="eM9-US-1MR" secondAttribute="top" constant="10" id="fu7-dr-2lg"/>
+                                        <constraint firstItem="abj-Lt-kFY" firstAttribute="leading" secondItem="eM9-US-1MR" secondAttribute="leading" constant="10" id="lYl-fb-l5C"/>
+                                        <constraint firstAttribute="bottom" secondItem="abj-Lt-kFY" secondAttribute="bottom" constant="10" id="qOM-hJ-7Nr"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="HorizontalScrollView" destination="abj-Lt-kFY" id="pmX-W4-Qoy"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pEO-oy-B0f" id="pDn-0e-R6V"/>
+                            <outlet property="delegate" destination="pEO-oy-B0f" id="VEy-jl-xzk"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TUK-oC-5q7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708.5" y="-585.5"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="L6N-0w-C0t">
