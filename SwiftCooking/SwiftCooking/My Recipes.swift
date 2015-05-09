@@ -13,6 +13,11 @@ class My_Recipes: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        let navigationItemAdd = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.Plain, target: self, action: "addRecipe")
+
+        self.navigationItem.rightBarButtonItem = navigationItemAdd
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -64,8 +69,8 @@ class My_Recipes: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
         
         
-        cell.textLabel?.text = "This is something"
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+     //   cell.textLabel?.text = "This is something"
+      //  cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         // Configure the cell...
         
         return cell
@@ -116,4 +121,8 @@ class My_Recipes: UITableViewController {
     }
     */
 
+    func addRecipe(){
+    
+        self.performSegueWithIdentifier("addRecipe", sender: self)
+    }
 }

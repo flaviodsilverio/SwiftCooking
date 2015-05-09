@@ -21,6 +21,7 @@
 		1B7CD9411AED558C00D20941 /* CustomCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7CD9401AED558C00D20941 /* CustomCollection.swift */; };
 		1BA60E901AEC587500EAA2F8 /* AllRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA60E8F1AEC587500EAA2F8 /* AllRecipes.swift */; };
 		1BD278331AF960F900EBB32B /* RecipeSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD278321AF960F900EBB32B /* RecipeSummary.swift */; };
+		1BD69CF51AFE9A4700669B3E /* AddRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD69CF41AFE9A4700669B3E /* AddRecipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1BA60E8F1AEC587500EAA2F8 /* AllRecipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllRecipes.swift; sourceTree = "<group>"; };
 		1BA60E911AEC595600EAA2F8 /* SwiftCooking-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftCooking-Bridging-Header.h"; sourceTree = "<group>"; };
 		1BD278321AF960F900EBB32B /* RecipeSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSummary.swift; sourceTree = "<group>"; };
+		1BD69CF41AFE9A4700669B3E /* AddRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRecipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				1B3F17DF1AE8432E00A70A56 /* ShoppingCart.swift */,
 				1BA60E8F1AEC587500EAA2F8 /* AllRecipes.swift */,
 				1BD278321AF960F900EBB32B /* RecipeSummary.swift */,
+				1BD69CF41AFE9A4700669B3E /* AddRecipe.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD69CF51AFE9A4700669B3E /* AddRecipe.swift in Sources */,
 				1B3F17DA1AE842EA00A70A56 /* Favourites.swift in Sources */,
 				1B3F17DC1AE842FC00A70A56 /* FriendsRecipes.swift in Sources */,
 				1B7CD9411AED558C00D20941 /* CustomCollection.swift in Sources */,

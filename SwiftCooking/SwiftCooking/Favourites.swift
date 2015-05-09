@@ -63,8 +63,8 @@ class Favourites: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
         
         
-        cell.textLabel?.text = "This is something"
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+     //   cell.textLabel?.text = "This is something"
+     //   cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         // Configure the cell...
         
         return cell

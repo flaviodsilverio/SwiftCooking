@@ -12,12 +12,14 @@ class RecipeSummary: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     @IBOutlet weak var childView: UIView!
     
+    @IBOutlet weak var tableView: UITableView!
     var ingredients : Array<String> = []
     var steps : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.clearColor()
+        
+        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         childView.backgroundColor = UIColor.whiteColor()
         
         

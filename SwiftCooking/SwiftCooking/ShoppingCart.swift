@@ -29,7 +29,7 @@ class ShoppingCart: UITableViewController {
        // let navigationItem = UIBarButtonItem()
         NSLog("%@",data.keys.array)
         //navigationItem.title="+"
-        let navigationItemEdit = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: Selector(enterEdit()))
+        let navigationItemEdit = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: "enterEdit")
         
         
         
@@ -54,12 +54,14 @@ class ShoppingCart: UITableViewController {
         // Return the number of sections.
         return 1 + data.count
     }
-    
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        if(section==0){
+        if(section==0 && self.tableView.editing){
+            return 2
+        } else if(section==0){
             return 1
-        } else{
+        }else{
             return data[data.keys.array[section-1]]!.count
         }
         
@@ -76,30 +78,58 @@ class ShoppingCart: UITableViewController {
         }
         
     }
-    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        if(tableView.editing == false && indexPath.row == 1 && indexPath.section == 0){
+            return 0
+        }
+        
+        return 40
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
         
         switch(indexPath.section){
         
         case 0:
             
-            cell.textLabel?.text = "+"
+            //let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "test")
+ 
+            var cell = tableView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as! UITableViewCell
+            
+            
             cell.textLabel?.textAlignment=NSTextAlignment.Center
-            cell.textLabel?.textColor = UIColor.whiteColor()
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
-            cell.backgroundColor = UIColor.grayColor()
+
+            
+            if indexPath.row == 0{
+                cell.textLabel?.textColor = UIColor.whiteColor()
+
+                cell.textLabel?.text = "+"
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
+                cell.backgroundColor = UIColor.grayColor()
+            } else {
+                
+                cell.clipsToBounds = true
+                cell.textLabel?.textColor = UIColor.redColor()
+                cell.textLabel?.text = "Delete All?";
+                cell.contentView.backgroundColor = UIColor.clearColor()
+                cell.textLabel?.backgroundColor = UIColor.clearColor()
+                cell.textLabel?.layer.cornerRadius = 20
+                cell.textLabel?.layer.borderWidth = 2.0
+                cell.textLabel?.layer.borderColor = UIColor.redColor().CGColor
+            }
             
             break;
-            
             
         default:
             
             cell.textLabel?.text = "This is something"
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-            
+
             break;
+
+            
         
         }
         
@@ -109,6 +139,9 @@ class ShoppingCart: UITableViewController {
         return cell
     }
 
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView.new()
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -157,9 +190,21 @@ class ShoppingCart: UITableViewController {
     func enterEdit(){
     
         self.tableView.editing = !self.tableView.editing
+        
+        if self.tableView.editing == false {
+            self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.None)
+        }
         self.tableView.reloadData()
     }
     
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if(indexPath.section == 0){
+            return false;
+        } else {
+            return true;
+        }
+        
+    }
     // MARK: - getting the data
     func getData(){
     

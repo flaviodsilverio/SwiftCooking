@@ -63,14 +63,28 @@ class FriendsRecipes: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
         
-        
-        cell.textLabel?.text = "This is something"
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+       // cell.textLabel?.text = "This is something"
+       // cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         // Configure the cell...
         
         return cell
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+            let childController = self.storyboard?.instantiateViewControllerWithIdentifier("RecipeSummary") as! UIViewController!
+            addChildViewController(childController)
+            childController.view.frame = self.view.frame
+            self.view.addSubview(childController.view)
+            childController.didMoveToParentViewController(self)
+            self.childViewControllers
+            //var childView = RecipeSummary()
+            // self.view.addSubview(childView.view)
+            
+            //self.performSegueWithIdentifier("showDetails", sender: self)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
