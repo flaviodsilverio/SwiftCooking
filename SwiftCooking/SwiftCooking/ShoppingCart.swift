@@ -104,7 +104,9 @@ class ShoppingCart: UITableViewController {
             
             if indexPath.row == 0{
                 cell.textLabel?.textColor = UIColor.whiteColor()
-
+                
+                cell.backgroundColor = UIColor(red:0, green:0, blue:0, alpha:0)
+                
                 cell.textLabel?.text = "+"
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
                 cell.backgroundColor = UIColor.grayColor()
