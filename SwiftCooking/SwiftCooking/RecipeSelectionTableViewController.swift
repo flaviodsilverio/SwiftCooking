@@ -13,7 +13,6 @@ class RecipeSelectionTableViewController: UITableViewController, HorizontalScrol
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,14 +37,15 @@ class RecipeSelectionTableViewController: UITableViewController, HorizontalScrol
     }
     
     
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! RecipeSelectionTableViewCell
 
-        
         cell.HorizontalScrollView.title = "Hello"
         cell.HorizontalScrollView.titleColor = UIColor.redColor()
         cell.HorizontalScrollView.scrollBackgroundColor = UIColor.grayColor()
 
+        cell.HorizontalScrollView.scrollView.frame.size.height = 165
         
         cell.HorizontalScrollView.delegate = self
         
@@ -63,19 +63,28 @@ class RecipeSelectionTableViewController: UITableViewController, HorizontalScrol
     }
     
     func HorizontalScrollDidSelectElement(scroll: UIScrollView, selectedView: UIView?, elementAtIndex: Int?) {
-        NSLog("Select Elment")
+        
+        self.performSegueWithIdentifier("showRecipeSummarySegue" , sender: elementAtIndex)
+        
+        
+        
     }
     
 
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        
+        let destinationVC = segue.destinationViewController as! RecipeSummaryViewController
+        //destinationVC.RecipeSummary = 1
+        
+        
+        NSLog("Segue")
     }
-    */
+    
 
 }
