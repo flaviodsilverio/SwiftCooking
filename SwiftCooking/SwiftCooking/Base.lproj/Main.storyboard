@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kff-QV-OxL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -9,6 +10,7 @@
         <scene sceneID="UfL-Ee-oK0">
             <objects>
                 <navigationController id="Kff-QV-OxL" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e29-GB-ken">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -19,12 +21,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yv-u2-ygd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-582" y="251"/>
+            <point key="canvasLocation" x="-488.5" y="250.5"/>
         </scene>
-        <!--Main Menu-->
+        <!--Main Menu View Controller-->
         <scene sceneID="4gw-QE-csP">
             <objects>
-                <viewController id="A3X-EP-T23" customClass="MainMenu" customModule="SwiftCooking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="A3X-EP-T23" customClass="MainMenuViewController" customModule="SwiftCooking" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bT0-D3-N10"/>
                         <viewControllerLayoutGuide type="bottom" id="Aq4-VK-1po"/>
@@ -75,9 +77,9 @@
                                     <segue destination="M6a-f6-vl6" kind="show" id="57L-Zn-lLl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rog-B4-RmT" userLabel="All Recipes">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rog-B4-RmT">
                                 <rect key="frame" x="0.0" y="364" width="375" height="57"/>
-                                <state key="normal" title="All Recipes" backgroundImage="btn1">
+                                <state key="normal" title="Start Cooking" backgroundImage="btn1">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -122,10 +124,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="oiK-Sa-dxZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="btnFavourites" destination="G87-hO-eBl" id="ZFh-gV-5N8"/>
+                        <outlet property="btnFriendsRecipes" destination="kgm-A2-9Jm" id="3uO-YN-xHJ"/>
+                        <outlet property="btnMyRecipes" destination="gmt-3M-U2n" id="8WV-DK-DPH"/>
+                        <outlet property="btnShoppingCart" destination="TPs-kr-EBL" id="X5m-La-4AL"/>
+                        <outlet property="btnStartCooking" destination="Rog-B4-RmT" id="OMM-RD-rrZ"/>
+                        <segue destination="Mrk-Mz-bNs" kind="presentation" identifier="showSideMenuSegue" modalPresentationStyle="overFullScreen" id="9Fi-hd-Efv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PrK-JM-vFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="56.5" y="250.5"/>
+            <point key="canvasLocation" x="67.5" y="250.5"/>
         </scene>
         <!--Recipe Summary View Controller-->
         <scene sceneID="c9O-0h-llo">
@@ -385,8 +395,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kRg-Kc-iBJ" id="eM9-US-1MR">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abj-Lt-kFY" customClass="HorizontalScroll" customModule="SwiftCooking" customModuleProvider="target">
-                                            <rect key="frame" x="10" y="10" width="355" height="259"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abj-Lt-kFY" customClass="HorizontalScroll" customModule="SwiftCooking" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="10" width="355" height="249"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
@@ -414,7 +424,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUK-oC-5q7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="718.5" y="-585.5"/>
+            <point key="canvasLocation" x="716.5" y="-588.5"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="L6N-0w-C0t">
@@ -523,6 +533,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVI-qd-VXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708.5" y="1151.5"/>
+        </scene>
+        <!--Side Menu View Controller-->
+        <scene sceneID="BV5-AQ-m9P">
+            <objects>
+                <viewController id="Mrk-Mz-bNs" customClass="SideMenuViewController" customModule="SwiftCooking" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kJk-Pa-bP0"/>
+                        <viewControllerLayoutGuide type="bottom" id="AX4-mX-xOF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dY3-2t-AW8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1b-Il-jsZ">
+                                <rect key="frame" x="0.0" y="0.0" width="215" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1x2-NP-Xx9">
+                                    <rect key="frame" x="0.0" y="0.0" width="215" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pp6-jq-gBB">
+                                            <rect key="frame" x="213" y="0.0" width="2" height="667"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="2" id="rE8-86-c90"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="pp6-jq-gBB" secondAttribute="bottom" id="H3o-jt-lad"/>
+                                        <constraint firstAttribute="trailing" secondItem="pp6-jq-gBB" secondAttribute="trailing" id="Rhf-6b-tPl"/>
+                                        <constraint firstItem="pp6-jq-gBB" firstAttribute="top" secondItem="1x2-NP-Xx9" secondAttribute="top" id="lfP-Dj-2Af"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="z1b-Il-jsZ" firstAttribute="trailing" secondItem="dY3-2t-AW8" secondAttribute="trailingMargin" multiplier="0.6" id="8pY-Rv-gfd"/>
+                            <constraint firstItem="z1b-Il-jsZ" firstAttribute="leading" secondItem="dY3-2t-AW8" secondAttribute="leading" id="9hl-D6-Tm3"/>
+                            <constraint firstItem="z1b-Il-jsZ" firstAttribute="top" secondItem="dY3-2t-AW8" secondAttribute="top" id="SDX-c4-vH1"/>
+                            <constraint firstItem="AX4-mX-xOF" firstAttribute="top" secondItem="z1b-Il-jsZ" secondAttribute="bottom" id="Vk8-PV-x8P"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="stuff" destination="z1b-Il-jsZ" id="UvJ-Uo-tJT"/>
+                        <segue destination="0Fg-O9-SsT" kind="unwind" identifier="dismissSideMenuSegue" unwindAction="unwindToMainViewController:" id="XAk-Ss-Nsr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ElH-7C-vMU" sceneMemberID="firstResponder"/>
+                <exit id="0Fg-O9-SsT" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="67.5" y="-509.5"/>
         </scene>
     </scenes>
     <resources>

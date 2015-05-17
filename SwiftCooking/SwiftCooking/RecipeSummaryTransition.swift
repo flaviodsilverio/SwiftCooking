@@ -10,7 +10,7 @@ import UIKit
 
 class RecipeSummaryTransition: NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
    
-    var presenting: Bool = false
+    private var presenting: Bool = false
     
     
     
@@ -51,7 +51,7 @@ class RecipeSummaryTransition: NSObject, UIViewControllerAnimatedTransitioning, 
             RecipeSummaryVC.viewIngredientsList?.transform = offstageRight
             RecipeSummaryVC.btnStartRecipe?.transform = offstageBottom
             
-            RecipeSummaryVC.viewMainInformation?.alpha = 0
+            //RecipeSummaryVC.viewMainInformation?.alpha = 0
         }
         
         
@@ -62,7 +62,7 @@ class RecipeSummaryTransition: NSObject, UIViewControllerAnimatedTransitioning, 
         let duration = self.transitionDuration(transitionContext)
         
         // perform the animation!
-        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: nil, animations: {
+        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.LayoutSubviews, animations: {
             
             if (self.presenting){
                 
@@ -77,10 +77,9 @@ class RecipeSummaryTransition: NSObject, UIViewControllerAnimatedTransitioning, 
                 RecipeSummaryVC.btnStartRecipe?.transform = CGAffineTransformIdentity
                 RecipeSummaryVC.lblTitle?.alpha = 1
                 
-                UIView.animateWithDuration(5, delay: 0.1, options: nil,  animations: {
-                    RecipeSummaryVC.viewMainInformation?.alpha = 1
-                    
-                }, completion: nil)
+                //UIView.animateWithDuration(5, delay: 0.1, options: nil,  animations: {
+                    //RecipeSummaryVC.viewMainInformation?.alpha = 1
+                //}, completion: nil)
             }
             else {
                 
@@ -92,7 +91,7 @@ class RecipeSummaryTransition: NSObject, UIViewControllerAnimatedTransitioning, 
                 RecipeSummaryVC.viewIngredientsList?.transform = offstageRight
                 RecipeSummaryVC.btnStartRecipe?.transform = offstageBottom
                 RecipeSummaryVC.lblTitle?.alpha = 0
-                RecipeSummaryVC.viewMainInformation?.alpha = 0
+                //RecipeSummaryVC.viewMainInformation?.alpha = 0
                 
                 
                 menuView.alpha = 0 // fade out
