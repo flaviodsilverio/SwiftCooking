@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainMenuViewController: UIViewController {
+class MainMenuViewController: UIViewController, SideMenuDelegate {
 
     
     @IBOutlet weak var btnStartCooking: UIButton!
@@ -18,7 +18,7 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var btnShoppingCart: UIButton!
     
     
-    
+    var showFromSideMenu = false
     
     var sideMenuTransition = SideMenuTransition()
     
@@ -52,6 +52,21 @@ class MainMenuViewController: UIViewController {
         
     }
     
+    func SideMenuDidSelectOptionAtIndex(index: Int){
+        
+        // Do segue
+        showFromSideMenu = true
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if showFromSideMenu {
+            self.performSegueWithIdentifier("segueShowLogin", sender: nil)
+            
+            showFromSideMenu = false
+        }
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -59,8 +74,11 @@ class MainMenuViewController: UIViewController {
                       
             let sideMenuVC = segue.destinationViewController as! SideMenuViewController
             sideMenuVC.transitioningDelegate = sideMenuTransition
+            //sideMenuVC.delegate = self
             
             self.sideMenuTransition.destinationViewController = sideMenuVC
+            
+            sideMenuVC.delegate = self
             
         }
         

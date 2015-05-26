@@ -26,6 +26,9 @@
 		B785CA241AFC0A8F003F798C /* HorizontalScrollProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B785CA211AFC0A8F003F798C /* HorizontalScrollProtocol.swift */; };
 		B785CA291AFC0EA9003F798C /* RecipeSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B785CA281AFC0EA9003F798C /* RecipeSelectionTableViewController.swift */; };
 		B785CA2B1AFC1878003F798C /* RecipeSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B785CA2A1AFC1878003F798C /* RecipeSelectionTableViewCell.swift */; };
+		B7DF6E441B0A841000FFDD59 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DF6E431B0A841000FFDD59 /* LoginViewController.swift */; };
+		B7DF6E461B0E8BA300FFDD59 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DF6E451B0E8BA300FFDD59 /* SideMenuTableViewCell.swift */; };
+		B7DF6E541B13E83900FFDD59 /* SideMenuProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DF6E531B13E83900FFDD59 /* SideMenuProtocol.swift */; };
 		B7E714A81AFF949B001989D5 /* RecipeSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E714A71AFF949B001989D5 /* RecipeSummaryViewController.swift */; };
 		B7E714AA1AFFA364001989D5 /* RecipeSummaryTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E714A91AFFA364001989D5 /* RecipeSummaryTransition.swift */; };
 		B7E714AC1B02B39D001989D5 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E714AB1B02B39D001989D5 /* UIViewExt.swift */; };
@@ -65,6 +68,9 @@
 		B785CA211AFC0A8F003F798C /* HorizontalScrollProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalScrollProtocol.swift; sourceTree = "<group>"; };
 		B785CA281AFC0EA9003F798C /* RecipeSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSelectionTableViewController.swift; sourceTree = "<group>"; };
 		B785CA2A1AFC1878003F798C /* RecipeSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		B7DF6E431B0A841000FFDD59 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B7DF6E451B0E8BA300FFDD59 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		B7DF6E531B13E83900FFDD59 /* SideMenuProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuProtocol.swift; sourceTree = "<group>"; };
 		B7E714A71AFF949B001989D5 /* RecipeSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSummaryViewController.swift; sourceTree = "<group>"; };
 		B7E714A91AFFA364001989D5 /* RecipeSummaryTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSummaryTransition.swift; sourceTree = "<group>"; };
 		B7E714AB1B02B39D001989D5 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 		1B3F17D61AE842AF00A70A56 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B7DF6E421B0A83F100FFDD59 /* Login */,
 				B785CA171AF9571F003F798C /* MainMenu */,
 				B72707F51B07EA6500FEB0D1 /* SideMenu */,
 				B785CA251AFC0E15003F798C /* RecipeSelection */,
@@ -176,6 +183,8 @@
 			children = (
 				B72707F81B07EF4B00FEB0D1 /* SideMenuViewController.swift */,
 				B72707F61B07EAB800FEB0D1 /* SideMenuTransition.swift */,
+				B7DF6E451B0E8BA300FFDD59 /* SideMenuTableViewCell.swift */,
+				B7DF6E531B13E83900FFDD59 /* SideMenuProtocol.swift */,
 			);
 			name = SideMenu;
 			sourceTree = "<group>";
@@ -245,6 +254,14 @@
 				B785CA2A1AFC1878003F798C /* RecipeSelectionTableViewCell.swift */,
 			);
 			name = RecipeSelection;
+			sourceTree = "<group>";
+		};
+		B7DF6E421B0A83F100FFDD59 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B7DF6E431B0A841000FFDD59 /* LoginViewController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		B7E714A61AFF92F5001989D5 /* RecipeSummary */ = {
@@ -357,11 +374,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7DF6E441B0A841000FFDD59 /* LoginViewController.swift in Sources */,
 				B7E714AC1B02B39D001989D5 /* UIViewExt.swift in Sources */,
 				B785CA291AFC0EA9003F798C /* RecipeSelectionTableViewController.swift in Sources */,
 				B72707C61B03FE7300FEB0D1 /* Config.swift in Sources */,
 				1B3F17DA1AE842EA00A70A56 /* Favourites.swift in Sources */,
 				1B3F17DC1AE842FC00A70A56 /* FriendsRecipes.swift in Sources */,
+				B7DF6E541B13E83900FFDD59 /* SideMenuProtocol.swift in Sources */,
 				B7E714A81AFF949B001989D5 /* RecipeSummaryViewController.swift in Sources */,
 				B785CA221AFC0A8F003F798C /* HorizontalScroll.swift in Sources */,
 				B785CA241AFC0A8F003F798C /* HorizontalScrollProtocol.swift in Sources */,
@@ -371,6 +390,7 @@
 				1B3F17B71AE8400E00A70A56 /* SwiftCooking.xcdatamodeld in Sources */,
 				1B3F17B41AE8400E00A70A56 /* AppDelegate.swift in Sources */,
 				1B3F17DE1AE8430A00A70A56 /* My Recipes.swift in Sources */,
+				B7DF6E461B0E8BA300FFDD59 /* SideMenuTableViewCell.swift in Sources */,
 				B785CA2B1AFC1878003F798C /* RecipeSelectionTableViewCell.swift in Sources */,
 				1B3F17E01AE8432E00A70A56 /* ShoppingCart.swift in Sources */,
 				B7E714AA1AFFA364001989D5 /* RecipeSummaryTransition.swift in Sources */,

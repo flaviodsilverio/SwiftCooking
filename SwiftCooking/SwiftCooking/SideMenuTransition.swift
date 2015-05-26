@@ -57,7 +57,7 @@ class SideMenuTransition: UIPercentDrivenInteractiveTransition, UIViewController
         
         
         if(self.presenting){
-            sideMenuViewController.stuff.transform = CGAffineTransformMakeTranslation(-250, 0)
+            sideMenuViewController.menu.transform = CGAffineTransformMakeTranslation(-250, 0)
             sideMenuView.alpha = 0
         }
         
@@ -73,14 +73,14 @@ class SideMenuTransition: UIPercentDrivenInteractiveTransition, UIViewController
             if (self.presenting) {
                 
                 sideMenuView.alpha = 1
-                sideMenuViewController.stuff.transform = CGAffineTransformIdentity
+                sideMenuViewController.menu.transform = CGAffineTransformIdentity
                 
                 
             }
             else {
               
                 sideMenuView.alpha = 0
-                sideMenuViewController.stuff.transform = CGAffineTransformMakeTranslation(-250, 0)
+                sideMenuViewController.menu.transform = CGAffineTransformMakeTranslation(-250, 0)
             }
 
             
@@ -95,11 +95,11 @@ class SideMenuTransition: UIPercentDrivenInteractiveTransition, UIViewController
             
             if (self.presenting) {
                 
-                (self.sourceViewController as! MainMenuViewController).btnStartCooking.transform = CGAffineTransformMakeTranslation(container.frame.width + 50, 0)
-                (self.sourceViewController as! MainMenuViewController).btnFavourites.transform = CGAffineTransformMakeTranslation(-container.frame.width - 50, 0)
-                (self.sourceViewController as! MainMenuViewController).btnMyRecipes.transform = CGAffineTransformMakeTranslation(container.frame.width + 50, 0)
-                (self.sourceViewController as! MainMenuViewController).btnFriendsRecipes.transform = CGAffineTransformMakeTranslation(-container.frame.width - 50 , 0)
-                (self.sourceViewController as! MainMenuViewController).btnShoppingCart.transform = CGAffineTransformMakeTranslation(container.frame.width + 50, 0)
+                (self.sourceViewController as! MainMenuViewController).btnStartCooking.transform = CGAffineTransformMakeTranslation(container.frame.width + 20, 0)
+                (self.sourceViewController as! MainMenuViewController).btnFavourites.transform = CGAffineTransformMakeTranslation(-container.frame.width - 20, 0)
+                (self.sourceViewController as! MainMenuViewController).btnMyRecipes.transform = CGAffineTransformMakeTranslation(container.frame.width + 20, 0)
+                (self.sourceViewController as! MainMenuViewController).btnFriendsRecipes.transform = CGAffineTransformMakeTranslation(-container.frame.width - 20 , 0)
+                (self.sourceViewController as! MainMenuViewController).btnShoppingCart.transform = CGAffineTransformMakeTranslation(container.frame.width + 20, 0)
             }
             else {
                 
