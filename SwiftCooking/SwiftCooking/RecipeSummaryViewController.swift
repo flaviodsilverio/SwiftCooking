@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipeSummaryViewController: UIViewController {
+class RecipeSummaryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let transitionManager = RecipeSummaryTransition()
     
@@ -154,10 +154,91 @@ class RecipeSummaryViewController: UIViewController {
     
     
     
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell : UITableViewCell = UITableViewCell()
+        
+        switch indexPath.section {
+        
+        case 0:
+            cell = tableView.dequeueReusableCellWithIdentifier("description") as! UITableViewCell
+            var label = cell.viewWithTag(100) as! UILabel
+            label.text = "asdasd alsdkajs dalsdjalskdjasd ldkfjdf dfsd sdlfsjdf sldfkjs lsdjfsld ldkf sldfj ldjfsdkfjsd lfksdj e mais uma coisas e tal como ef"
+            break
+        case 1:
+            cell = tableView.dequeueReusableCellWithIdentifier("ingredient") as! UITableViewCell
+            var label = cell.viewWithTag(100) as! UILabel
+            label.text = "⭐︎  Ingredient 1"
+            break
+        default:
+            break
+            
+        }
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        switch section {
+        
+        case 0:
+            
+            return 1
+            
+        case 1:
+            
+            return 10
+
+        default:
+            
+            return 0
+
+        }
+    }
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        var view = UIView(frame: CGRectMake(15, 0, tableView.frame.size.width, 30))
+        view.backgroundColor = UIColor.clearColor()
+        
+        var label = UILabel(frame: CGRectMake(15, 0, tableView.frame.width, 30))
+        label.textColor = UIColor.whiteColor()
+        view.addSubview(label)
+        
+        switch section{
+        
+        case 0:
+            label.text = "Description"
+            break
+        case 1:
+            label.text = "Ingredients"
+            break
+        default:
+            break
+        }
+        
+        
+        return view
+    }
     
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
     
-    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        switch indexPath.section{
+        
+        case 0:
+            return 100
+        case 1:
+            return 40
+        default:
+            return 0
+        }
+        
+        
+    }
     /*
     // MARK: - Navigation
 
