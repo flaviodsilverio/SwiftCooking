@@ -196,32 +196,42 @@ class RecipeSummaryViewController: UIViewController, UITableViewDataSource, UITa
 
         }
     }
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        
+//        var view = UIView(frame: CGRectMake(15, 0, tableView.frame.size.width, 15))
+//        view.backgroundColor = UIColor.clearColor()
+//        
+//        var label = UILabel(frame: CGRectMake(15, 0, tableView.frame.width, 15))
+//        label.textColor = UIColor.whiteColor()
+//        view.addSubview(label)
+//        
+//        switch section{
+//        
+//        case 0:
+//            label.text = "Description"
+//            break
+//        case 1:
+//            label.text = "Ingredients"
+//            break
+//        default:
+//            break
+//        }
+//        
+//        
+//        return view
+//    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+                switch section{
         
-        var view = UIView(frame: CGRectMake(15, 0, tableView.frame.size.width, 30))
-        view.backgroundColor = UIColor.clearColor()
-        
-        var label = UILabel(frame: CGRectMake(15, 0, tableView.frame.width, 30))
-        label.textColor = UIColor.whiteColor()
-        view.addSubview(label)
-        
-        switch section{
-        
-        case 0:
-            label.text = "Description"
-            break
-        case 1:
-            label.text = "Ingredients"
-            break
-        default:
-            break
+                case 0:
+                    return  "Description"
+                case 1:
+                    return "Ingredients"
+                default:
+                    return ""
         }
-        
-        
-        return view
     }
-    
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
