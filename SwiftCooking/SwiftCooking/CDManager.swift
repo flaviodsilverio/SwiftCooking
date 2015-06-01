@@ -15,11 +15,11 @@ func setContext(lContext: NSManagedObjectContext){
     context = lContext;
 }
 
-func getShoppingItems() -> Array<AnyObject>{
+func getShoppingItems() -> Array<NSManagedObject>{
 
     var fetch = NSFetchRequest(entityName: "ShoppingItem")
     
-    return context.executeFetchRequest(fetch, error: nil)!
+    return (context.executeFetchRequest(fetch, error: nil) as? [NSManagedObject])!
 }
 
 func addShoppingItem(){

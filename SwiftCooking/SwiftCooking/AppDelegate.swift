@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setContext(self.managedObjectContext!)
 
+        var objects : Array<NSManagedObject> = Array() // [NSManagedObject]() faz a mesma coisa mas é feio que doi
+        objects = getShoppingItems()
         
         // Override point for customization after application launch.
         return true
