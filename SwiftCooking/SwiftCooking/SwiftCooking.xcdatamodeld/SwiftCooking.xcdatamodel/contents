@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Person" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="shoppingList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ShoppingList" inverseName="person" inverseEntity="ShoppingList" syncable="YES"/>
+    </entity>
     <entity name="ShoppingItem" representedClassName="PRODUCT_MODULE_NAME.ShoppingItem" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="shoppingList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ShoppingList" inverseName="shoppingItem" inverseEntity="ShoppingList" syncable="YES"/>
+    </entity>
+    <entity name="ShoppingList" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="shoppingList" inverseEntity="Person" syncable="YES"/>
+        <relationship name="shoppingItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ShoppingItem" inverseName="shoppingList" inverseEntity="ShoppingItem" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ShoppingItem" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="ShoppingItem" positionX="1015" positionY="270" width="128" height="88"/>
+        <element name="ShoppingList" positionX="801" positionY="270" width="128" height="88"/>
+        <element name="Person" positionX="781" positionY="126" width="128" height="73"/>
     </elements>
 </model>

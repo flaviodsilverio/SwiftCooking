@@ -17,12 +17,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        setContext(self.managedObjectContext!)
+        //WARNING: warning
 
-        var objects : Array<NSManagedObject> = Array() // [NSManagedObject]() faz a mesma coisa mas é feio que doi
-        objects = getShoppingItems()
+        var allPersons = getAllPersons()
         
-        // Override point for customization after application launch.
+        if allPersons.count == 0 {
+            addDataToDatabase()
+            allPersons = getAllPersons()
+        }
+        
+        var objects : Array<NSManagedObject> = Array()
+        objects = getAllPersonsWithNameContaining("paulo") //aqui ves como se fazem os requests com predicates normais (WHERE)
+        println("O numero de Paulos e \(objects.count) de um total de \(allPersons.count)")
+        
+
+        //Agora que ja se fez um predicate normal vamos ver os AND's e OR's (so vou fazer um porque sao a mesma merda)
+        
+        //1o a maneira "facil de pensar" e vamos buscar paulos e marios
+        objects = getAllPersonsInTheEasyWayWithNameContaining("paulo", "mario")
+        println("Segundo a maneira facil o numero de Paulos e Marios e: \(objects.count)")
+
+        //E agora a maneira mais correcta em iOS e vamos buscar paulos e marios
+        objects = getAllPersonsWithNameContaining("paulo", "mario")
+        println("Segundo a maneira correcta em iOS o numero de Paulos e Marios e: \(objects.count)")
+        
+        println("Tcharan! dao igual (obviously)")
+        
         return true
     }
 
